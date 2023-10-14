@@ -1,0 +1,12 @@
+.exercise-list {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+  }
+  
+  .exercise-list h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+  
