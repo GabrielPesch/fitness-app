@@ -1,0 +1,28 @@
+.progress-tracker {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+  }
+  
+  .progress-tracker h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+  
+  .progress-tracker table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .progress-tracker th,
+  .progress-tracker td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .progress-tracker th {
+    background-color: #f2f2f2;
+  }
+  

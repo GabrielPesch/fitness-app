@@ -1,0 +1,20 @@
+<div class="progress-tracker">
+    <h2>Rastreador de Progresso</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Exercício</th>
+          <th>Peso</th>
+          <th>Repetições</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of progressRecords">
+          <td>{{ record.exercise }}</td>
+          <td>{{ record.weight }} kg</td>
+          <td>{{ record.reps }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
