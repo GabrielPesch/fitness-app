@@ -10,9 +10,13 @@ O tema do projeto da disciplina é criar uma aplicação web voltada para o gere
 
 ## Funcionalidades Principais
 
+- [x] ** Criar wireframe de baixa fidelidade
 - [ ] **Cadastro e Login de Usuários**: Autenticação segura para acessar funcionalidades personalizadas.
 - [ ] **Planejamento de Exercícios**: Crie e personalize planos de exercícios.
 - [ ] **Registro de Progresso**: Mantenha um registro detalhado do seu progresso em diferentes exercícios.
 
+** Wireframe
+
+- [x] [**Wire frame de baixa fidelidade**](https://www.figma.com/file/NNH8FT5ZUeDC8wyNGchuJd/Wireframing-(Copy)?type=design&node-id=799869%3A973&mode=design&t=XHyfDIetz3yfThm0-1)
 
 
