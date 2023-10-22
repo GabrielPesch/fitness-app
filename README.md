@@ -15,4 +15,6 @@ O tema do projeto da disciplina é criar uma aplicação web voltada para o gere
 - [ ] **Registro de Progresso**: Mantenha um registro detalhado do seu progresso em diferentes exercícios.
 
 
+## WireFrame
 
+https://www.figma.com/file/NNH8FT5ZUeDC8wyNGchuJd/Wireframing-(Copy)?type=design&node-id=799869-973&mode=design&t=XHyfDIetz3yfThm0-0
