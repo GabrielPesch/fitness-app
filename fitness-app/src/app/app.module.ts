@@ -12,13 +12,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { TrainingCardComponent } from './training-card/training-card.component';
+import { TrainingDetailsComponent } from './training-details/training-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomePageComponent,
-    TrainingCardComponent
+    TrainingCardComponent,
+    TrainingDetailsComponent
     
   ],
   imports: [
