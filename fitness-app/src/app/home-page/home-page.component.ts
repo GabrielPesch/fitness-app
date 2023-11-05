@@ -9,35 +9,73 @@ import { TrainingCard } from '../training-details/training-card.model';
 export class HomePageComponent implements OnInit {
   pageTitle: string = 'Minhas séries';
   pageSubtitle: string = 'O corpo conquista aquilo que a mente acredita';
-  cards: TrainingCard[] = [
-      { 
-        id: 1,
-        image: 'https://i.ibb.co/7kxQbrZ/vista-de-angulo-baixo-do-homem-de-construcao-muscular-irreconhecivel-se-preparando-para-levantar-uma.jpg', 
-        title: 'Treino 1',
-        repetitions: "4x12"
-      },
-      { 
-        id: 2,
-        image: 'https://i.ibb.co/7kxQbrZ/vista-de-angulo-baixo-do-homem-de-construcao-muscular-irreconhecivel-se-preparando-para-levantar-uma.jpg', 
-        title: 'Treino 2',
-        repetitions: "4x12"
-      },
-    { 
-      id: 3,
-      image: 'https://i.ibb.co/7kxQbrZ/vista-de-angulo-baixo-do-homem-de-construcao-muscular-irreconhecivel-se-preparando-para-levantar-uma.jpg', 
-      title: 'Treino 3',
-      repetitions: "4x12"
-    },
-    { 
-      id: 4,
-      image: 'https://i.ibb.co/7kxQbrZ/vista-de-angulo-baixo-do-homem-de-construcao-muscular-irreconhecivel-se-preparando-para-levantar-uma.jpg', 
-      title: 'Treino 4',
-      repetitions: "4x12"
-    },
-  ];
+  cards: TrainingCard[] = [];
+  formErrors: { [key: string]: string } = {
+    'title': '',
+    'image': ''
+  };
+
+  newTraining: TrainingCard = {
+    id: 0,
+    image: '',
+    title: '',
+    muscularGroup: 'Braços'
+  };
 
   constructor() { }
 
   ngOnInit(): void {
+    this.loadTrainings();
+  }
+  onSubmit(): void {
+
+    if (this.validateForm()) {
+      this.newTraining.id = this.generateUniqueId();
+  
+      if (!this.cards) {
+        this.cards = [];
+      }
+  
+      this.cards.push(this.newTraining);
+      localStorage.setItem('trainingCards', JSON.stringify(this.cards));
+      this.resetForm();
+    }
+  }
+
+  generateUniqueId(): number {
+    return Date.now();
+  }
+
+  loadTrainings(): void {
+    const storedTrainings = localStorage.getItem('trainingCards');
+    this.cards = storedTrainings ? JSON.parse(storedTrainings) : [];
+  }
+
+  validateForm(): boolean {
+    this.formErrors['title'] = this.newTraining.title ? '' : 'O título é obrigatório.';
+    this.formErrors['image'] = this.isValidUrl(this.newTraining.image)
+      ? (this.isJpgUrl(this.newTraining.image) ? '' : 'A imagem deve ser no formato .jpg.')
+      : 'O link da imagem é inválido ou está vazio.';
+
+    return !Object.values(this.formErrors).some(error => error);
+  }
+
+  isValidUrl(url: string): boolean {
+    const regex = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+    return regex.test(url);
+  }
+
+  isJpgUrl(url: string): boolean {
+    const regex = /\.jpg$/i;
+    return regex.test(url);
+  }
+
+  resetForm(): void {
+    this.newTraining = {
+      id: 0,
+      image: '',
+      title: '',
+      muscularGroup: 'Braços'
+    };
   }
 }

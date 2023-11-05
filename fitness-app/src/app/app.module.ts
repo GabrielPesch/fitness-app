@@ -13,6 +13,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { TrainingCardComponent } from './training-card/training-card.component';
 import { TrainingDetailsComponent } from './training-details/training-details.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TrainingDetailsComponent } from './training-details/training-details.co
     MatToolbarModule,
     MatButtonModule,  
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

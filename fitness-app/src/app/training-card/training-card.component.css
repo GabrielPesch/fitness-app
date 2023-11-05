@@ -1,33 +1,36 @@
-.example-card {
-    max-width: 400px;
-    margin: 2em;
-    border-radius: 15px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-  
-  .example-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .example-header-image {
-    background-image: url('https://i.ibb.co/7kxQbrZ/vista-de-angulo-baixo-do-homem-de-construcao-muscular-irreconhecivel-se-preparando-para-levantar-uma.jpg');
-    background-size: cover;
-  }
-  
-  .mat-card-title {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-  
-  .mat-card-actions {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  button.mat-button {
-    font-weight: bold;
-    color: #1976d2;
-  }
-  
+.card {
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.header-image {
+  background-size: cover;
+  background-image: url('https://i.ibb.co/7kxQbrZ/vista-de-angulo-baixo-do-homem-de-construcao-muscular-irreconhecivel-se-preparando-para-levantar-uma.jpg');
+}
+
+.img-box {
+  width: 250px;
+  height: 250px;
+}
+
+.mat-card-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button.mat-button {
+  font-weight: bold;
+  color: #1976d2;
+}
