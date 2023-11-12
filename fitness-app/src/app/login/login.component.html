@@ -1,0 +1,18 @@
+<div class="login-container">
+    <mat-card class="login-card">
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-content>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Email" [(ngModel)]="email">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input matInput type="password" placeholder="Senha" [(ngModel)]="password">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="login()">Login</button>
+        <p class="register-link">
+          Não tem uma conta? <a routerLink="/register">Cadastre-se</a>
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
