@@ -1,0 +1,22 @@
+<div class="register-container">
+  <mat-card class="register-card">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <mat-card-title>Cadastro</mat-card-title>
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nome" formControlName="name" maxlength="100" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Email" formControlName="email" maxlength="100" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput type="password" placeholder="Senha" formControlName="password" maxlength="100" required>
+      </mat-form-field>
+      <div class="button-group">
+        <button mat-raised-button color="primary" type="submit">Cadastrar</button>
+        <a routerLink="/" mat-raised-button>Voltar</a>
+      </div>
+    </mat-card-content>
+  </form>
+  </mat-card>
+</div>
