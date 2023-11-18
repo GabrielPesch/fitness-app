@@ -20,10 +20,10 @@ public class AuthenticationService {
 
     public CustomResponse authenticateUser(AuthenticationRequest authenticationRequest) {
         User user = userRepository.findByEmail(authenticationRequest.getEmail())
-                                  .orElseThrow(() -> new RuntimeException("User not found"));
+                                  .orElseThrow(() -> new RuntimeException("Usuário nao encontrado"));
 
         if (!passwordEncoder.matches(authenticationRequest.getPassword(), user.getPassword())) {
-            throw new RuntimeException("Password incorrect");
+            throw new RuntimeException("Login ou senha inválidos");
         }
 
         String token = JwtUtil.generateToken(user);

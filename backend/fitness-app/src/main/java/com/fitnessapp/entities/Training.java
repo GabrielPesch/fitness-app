@@ -15,7 +15,7 @@ public class Training {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	
+
 	@OneToOne
 	@JoinColumn(name = "user_id")
 	private User user;
@@ -46,8 +46,4 @@ public class Training {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
-
-	
-
 }

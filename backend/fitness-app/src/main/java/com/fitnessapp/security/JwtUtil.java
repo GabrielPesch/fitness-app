@@ -13,10 +13,14 @@ public class JwtUtil {
 
 	private static final Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
+	public static Key getKey() {
+		return key;
+	}
+
 	public static String generateToken(User user) {
 		long now = System.currentTimeMillis();
 
-		return Jwts.builder().setSubject(user.getName()).setIssuedAt(new Date(now))
+		return Jwts.builder().setSubject(user.getEmail()).setIssuedAt(new Date(now))
 				.setExpiration(new Date(now + 900000)).signWith(key, SignatureAlgorithm.HS256).compact();
 	}
 }

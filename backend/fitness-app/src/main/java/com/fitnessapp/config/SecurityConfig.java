@@ -1,6 +1,9 @@
 package com.fitnessapp.config;
 
 import org.springframework.web.filter.CorsFilter;
+
+import com.fitnessapp.security.JwtRequestFilter;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -17,6 +21,9 @@ public class SecurityConfig {
 	
     @Autowired
     private CorsFilter corsFilter;
+    
+    @Autowired
+    private JwtRequestFilter jwtRequestFilter;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -30,10 +37,9 @@ public class SecurityConfig {
         	.addFilterBefore(corsFilter, CorsFilter.class)
             .authorizeHttpRequests((authz) -> authz
                 .requestMatchers(HttpMethod.POST, "/users").permitAll() 
-                .requestMatchers(HttpMethod.GET, "/users").permitAll()  
                 .requestMatchers(HttpMethod.POST, "/login").permitAll()
                 .anyRequest().authenticated())
-            .httpBasic(httpBasic -> {});
+            .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
