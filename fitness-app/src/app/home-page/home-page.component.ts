@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Training } from '../training-details/training-card.model';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from 'src/environment/environment';
 
 @Component({
   selector: 'app-home-page',
@@ -27,7 +28,7 @@ export class HomePageComponent implements OnInit {
       if (user && user.id) {
         this.http
           .get<Training[]>(
-            `http://localhost:3000/trainings?user_id=${user.id}`
+            `${environment.apiBaseUrl}/trainings?user_id=${user.id}`
           )
           .subscribe((trainings) => {
             this.cards = trainings;

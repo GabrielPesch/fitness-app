@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Exercise } from './exercise.model';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { environment } from 'src/environment/environment';
 
 @Component({
   selector: 'app-exercise-card',
@@ -23,7 +24,7 @@ export class ExerciseCardComponent {
     this.cardData.load = this.newLoad;
     this.editMode = false;
 
-    this.http.patch(`http://localhost:3000/exercises/${this.cardData.id}`, { load: this.newLoad })
+    this.http.patch(`${environment.apiBaseUrl}/exercises/${this.cardData.id}`, { load: this.newLoad })
       .subscribe({
         next: () => {
           this.openSnackBar('Carga atualizada', 'Fechar');
