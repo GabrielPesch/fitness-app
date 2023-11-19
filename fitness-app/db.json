@@ -1,0 +1,71 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Gabriel Kucek Pesch",
+      "email": "gabriel.pesch@gmail.com",
+      "password": "senha123"
+    },
+    {
+      "email": "teste@email.com",
+      "password": "123456",
+      "name": "teste",
+      "id": 2
+    }
+  ],
+  "trainings": [
+    {
+      "id": 1,
+      "title": "Treino A",
+      "finished_times": 5,
+      "image_url": "https://img.freepik.com/fotos-gratis/vista-de-angulo-baixo-do-homem-de-construcao-muscular-irreconhecivel-se-preparando-para-levantar-uma-barra-em-um-clube-de-saude_637285-2497.jpg",
+      "user_id": 1
+    }
+  ],
+  "exercises": [
+    {
+      "id": 2,
+      "user_id": 1,
+      "training_id": 1,
+      "name": "supino inclinado",
+      "muscular_group": "peito",
+      "repetitions": "4x12",
+      "rest": 40,
+      "image_url": "https://www.smartfit.com.br/news/wp-content/uploads/2016/06/varia%C3%A7%C3%B5es-de-supino.jpg",
+      "load": 25
+    },
+    {
+      "id": 3,
+      "user_id": 1,
+      "training_id": 1,
+      "name": "supino inclinado",
+      "muscular_group": "peito",
+      "repetitions": "4x12",
+      "rest": 40,
+      "image_url": "https://www.smartfit.com.br/news/wp-content/uploads/2016/06/varia%C3%A7%C3%B5es-de-supino.jpg",
+      "load": 20
+    },
+    {
+      "id": 4,
+      "user_id": 1,
+      "training_id": 1,
+      "name": "supino inclinado",
+      "muscular_group": "peito",
+      "repetitions": "4x12",
+      "rest": 40,
+      "image_url": "https://www.smartfit.com.br/news/wp-content/uploads/2016/06/varia%C3%A7%C3%B5es-de-supino.jpg",
+      "load": 20
+    },
+    {
+      "id": 5,
+      "user_id": 1,
+      "training_id": 1,
+      "name": "supino inclinado",
+      "muscular_group": "peito",
+      "repetitions": "4x12",
+      "rest": 40,
+      "image_url": "https://www.smartfit.com.br/news/wp-content/uploads/2016/06/varia%C3%A7%C3%B5es-de-supino.jpg",
+      "load": 20
+    }
+  ]
+}

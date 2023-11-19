@@ -1,9 +1,14 @@
-.container {
-    text-align: center;
-  }
-  
-  .center-title {
-    text-align: center;
-  }
+.finish-training-button {
+  font-size: 1.2em; 
+  padding: 10px 20px; 
+  display: block; 
+  margin: 20px auto; 
+}
 
-  
+.card-container {
+  display: flex;
+  justify-content: center;
+  max-width: 90%;
+  flex-wrap: wrap;
+  margin: 5%
+}

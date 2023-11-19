@@ -1,0 +1,25 @@
+<div class="register-container">
+    <mat-card class="register-card">
+        <form [formGroup]="trainingForm" (ngSubmit)="registerTraining()">
+            <mat-card-title>Cadastro de Treinamento</mat-card-title>
+            <mat-card-content>
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Nome do Treinamento</mat-label>
+                    <input matInput placeholder="Nome do Treinamento" formControlName="title">
+                    <mat-error *ngIf="trainingForm.get('title')?.errors?.['required']">Nome do treinamento é
+                        obrigatório.</mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>URL da Imagem</mat-label>
+                    <input matInput placeholder="URL da Imagem" formControlName="image_url">
+                    <mat-error *ngIf="trainingForm.get('image_url')?.errors?.['required']">URL da imagem é
+                        obrigatório.</mat-error>
+                </mat-form-field>
+                <div class="button-group">
+                    <button mat-raised-button color="primary" type="submit" [disabled]="trainingForm.invalid">Cadastrar
+                        Treinamento</button>
+                </div>
+            </mat-card-content>
+        </form>
+    </mat-card>
+</div>

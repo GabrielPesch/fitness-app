@@ -17,3 +17,11 @@
   .register-link {
     margin-top: 16px;
   }
+
+  mat-card-title, p {
+    color: white;
+  }
+
+  a {
+    color: lightblue
+  }

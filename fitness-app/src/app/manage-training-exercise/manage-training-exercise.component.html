@@ -1,0 +1,48 @@
+<div class="manage-container">
+    <h2>Gerenciar Treinos</h2>
+    <div class="manage-table">
+        <!-- Cabeçalho da Tabela -->
+        <div class="manage-row header-row">
+            <div class="manage-cell">Id</div>
+            <div class="manage-cell">Nome do Treino</div>
+            <div class="manage-cell">Vezes Concluído</div>
+            <div class="manage-cell">Ações</div>
+        </div>
+        <!-- Linhas da Tabela -->
+        <div class="manage-row" *ngFor="let training of trainings">
+            <div class="manage-cell">{{ training.id }}</div>
+            <div class="manage-cell">{{ training.title }}</div>
+            <div class="manage-cell">{{ training.finished_times }}</div>
+            <div class="manage-cell">
+                <button mat-button color="warn" *ngIf="training.id"
+                    (click)="removeTraining(training.id)">Remover</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="manage-table">
+        <h2>Gerenciar Exercícios</h2>
+        <div class="manage-row header-row">
+            <div class="manage-cell">Id</div>
+            <div class="manage-cell">Nome do Exercicio</div>
+            <div class="manage-cell">Grupo Muscular</div>
+            <div class="manage-cell">Repetiçoes</div>
+            <div class="manage-cell">Descanso</div>
+            <div class="manage-cell">Carga</div>
+            <div class="manage-cell">Ações</div>
+        </div>
+
+        <div class="manage-row" *ngFor="let exercise of exercises">
+            <div class="manage-cell">{{ exercise.id }}</div>
+            <div class="manage-cell">{{ exercise.name }}</div>
+            <div class="manage-cell">{{ exercise.muscular_group }}</div>
+            <div class="manage-cell">{{ exercise.repetitions }}</div>
+            <div class="manage-cell">{{ exercise.rest }}</div>
+            <div class="manage-cell">{{ exercise.load }}</div>
+            <div class="manage-cell">
+                <button mat-button color="warn" *ngIf="exercise.id"
+                    (click)="removeExercise(exercise.id)">Remover</button>
+            </div>
+        </div>
+    </div>
+</div>

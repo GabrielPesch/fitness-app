@@ -1,0 +1,54 @@
+<div class="register-container">
+    <mat-card class="register-card">
+      <form [formGroup]="exerciseForm" (ngSubmit)="registerExercise()">
+        <mat-card-title>Cadastro de Exercício</mat-card-title>
+        <mat-card-content>
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Nome do Exercício</mat-label>
+            <input matInput placeholder="Nome do Exercício" formControlName="name">
+            <mat-error *ngIf="exerciseForm.get('name')?.errors?.['required']">Nome do exercício é obrigatório.</mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Treino</mat-label>
+            <mat-select formControlName="training_id">
+              <mat-option *ngFor="let training of trainings" [value]="training.id">
+                {{ training.title }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Grupo Muscular</mat-label>
+            <mat-select formControlName="muscular_group">
+              <mat-option value="Peito">Peito</mat-option>
+              <mat-option value="Bíceps">Bíceps</mat-option>
+              <mat-option value="Tríceps">Tríceps</mat-option>
+              <mat-option value="Pernas">Pernas</mat-option>
+              <mat-option value="Ombros">Ombros</mat-option>
+              <mat-option value="Lombar">Lombar</mat-option>
+              <mat-option value="Abdomen">Abdomen</mat-option>
+            </mat-select>
+            <mat-error *ngIf="exerciseForm.get('muscular_group')?.errors?.['required']">Grupo muscular é obrigatório.</mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Repetições</mat-label>
+            <input matInput placeholder="Repetições" formControlName="repetitions">
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Tempo de Descanso (segundos)</mat-label>
+            <input matInput type="number" placeholder="Descanso" formControlName="rest">
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>URL da Imagem</mat-label>
+            <input matInput placeholder="URL da Imagem" formControlName="image_url">
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Carga (Kg)</mat-label>
+            <input matInput type="number" placeholder="Carga" formControlName="load">
+          </mat-form-field>
+          <div class="button-group">
+            <button mat-raised-button color="primary" type="submit" [disabled]="exerciseForm.invalid">Cadastrar Exercício</button>
+          </div>
+        </mat-card-content>
+      </form>
+    </mat-card>
+  </div>
