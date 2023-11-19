@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Exercise } from '../exercise-card/exercise.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Training } from './training-card.model';
+import { environment } from 'src/environment/environment';
 
 @Component({
   selector: 'app-training-details',
@@ -30,7 +31,7 @@ export class TrainingDetailsComponent implements OnInit {
   loadExercises(trainingId: number): void {
     this.http
       .get<Exercise[]>(
-        `http://localhost:3000/exercises?training_id=${trainingId}`
+        `${environment.apiBaseUrl}/exercises?training_id=${trainingId}`
       )
       .subscribe((exercises) => {
         this.exercises = exercises;
@@ -41,10 +42,10 @@ export class TrainingDetailsComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.http
-        .get<Training>(`http://localhost:3000/trainings/${id}`)
+        .get<Training>(`${environment.apiBaseUrl}/trainings/${id}`)
         .subscribe((trainingPayload) => {
           this.http
-            .patch(`http://localhost:3000/trainings/${trainingPayload.id}`, {
+            .patch(`${environment.apiBaseUrl}/trainings/${trainingPayload.id}`, {
               finished_times: trainingPayload.finished_times + 1,
             })
             .subscribe({

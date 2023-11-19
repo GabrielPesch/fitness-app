@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Training } from '../training-details/training-card.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Exercise } from '../exercise-card/exercise.model';
+import { environment } from 'src/environment/environment';
 
 @Component({
   selector: 'app-manage-training-exercise',
@@ -23,7 +24,7 @@ export class ManageTrainingExerciseComponent implements OnInit {
   loadTrainings() {
     const userId = JSON.parse(localStorage.getItem('user') || '{}').id;
     this.http
-      .get<Training[]>(`http://localhost:3000/trainings?user_id=${userId}`)
+      .get<Training[]>(`${environment.apiBaseUrl}/trainings?user_id=${userId}`)
       .subscribe((trainings) => {
         this.trainings = trainings;
       });
@@ -32,14 +33,14 @@ export class ManageTrainingExerciseComponent implements OnInit {
   loadExercises() {
     const userId = JSON.parse(localStorage.getItem('user') || '{}').id;
     this.http
-      .get<Exercise[]>(`http://localhost:3000/exercises?user_id=${userId}`)
+      .get<Exercise[]>(`${environment.apiBaseUrl}/exercises?user_id=${userId}`)
       .subscribe((exercise) => {
         this.exercises = exercise;
       });
   }
 
   removeTraining(trainingId: number) {
-    this.http.delete(`http://localhost:3000/trainings/${trainingId}`).subscribe({
+    this.http.delete(`${environment.apiBaseUrl}/trainings/${trainingId}`).subscribe({
       next: () => {
         this.openSnackBar('Treinamento removido', 'fechar');
         const exercisesId = this.exercises.filter((exercise) => exercise.training_id === trainingId)
@@ -52,7 +53,7 @@ export class ManageTrainingExerciseComponent implements OnInit {
   }
 
   removeExercise(exerciseId: number) {
-    this.http.delete(`http://localhost:3000/exercises/${exerciseId}`).subscribe({
+    this.http.delete(`${environment.apiBaseUrl}/exercises/${exerciseId}`).subscribe({
       next: () => {
         this.openSnackBar('Exercício removido', 'fechar');
         this.loadExercises();

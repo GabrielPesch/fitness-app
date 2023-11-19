@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Exercise } from '../exercise-card/exercise.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Training } from '../training-details/training-card.model';
+import { environment } from 'src/environment/environment';
 
 @Component({
   selector: 'app-register-exercise',
@@ -40,7 +41,7 @@ export class RegisterExerciseComponent implements OnInit {
       const userId = JSON.parse(localStorage.getItem('user') || '{}').id;
 
       this.http
-        .post<Exercise>('http://localhost:3000/exercises', {
+        .post<Exercise>(`${environment.apiBaseUrl}/exercises`, {
           training_id: 1,
           user_id: userId,
           ...exerciseData,
@@ -62,7 +63,7 @@ export class RegisterExerciseComponent implements OnInit {
     const userId = JSON.parse(localStorage.getItem('user') || '{}').id;
     if (userId) {
       this.http
-        .get<Training[]>(`http://localhost:3000/trainings?user_id=${userId}`)
+        .get<Training[]>(`${environment.apiBaseUrl}/trainings?user_id=${userId}`)
         .subscribe((trainings) => {
           this.trainings = trainings;
         });

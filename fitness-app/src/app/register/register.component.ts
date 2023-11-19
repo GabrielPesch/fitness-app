@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthenticationService } from '../authentication.service';
+import { environment } from 'src/environment/environment';
 
 interface IregisterResponse {
   id: number;
@@ -59,7 +59,7 @@ export class RegisterComponent {
       };
 
       this.http
-        .post<IregisterResponse>('http://localhost:3000/users', userData)
+        .post<IregisterResponse>(`${environment.apiBaseUrl}/users`, userData)
         .subscribe({
           next: (response) => {
             const { password, ...restOfUser } = response;
