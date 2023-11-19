@@ -4,8 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --base-href=/fitness-app/",
     "watch": "ng build --watch --configuration development",
+    "ghpages": "angular-cli-ghpages --dir=dist/fitness-app",
+    "deploy": "npm run build & npm run ghpages",
     "test": "ng test"
   },
   "private": true,
@@ -20,6 +22,7 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "angular-cli-ghpages": "^1.0.7",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
