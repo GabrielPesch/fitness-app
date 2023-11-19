@@ -1,3 +1,4 @@
-<div class="container">
-  <h1 class="center-title">ID do Treino: {{ id }}</h1>
+<button class="finish-training-button" mat-raised-button color="accent" (click)="finishTraining()">Finalizar treino</button>
+<div class="card-container">
+  <app-exercise-card *ngFor="let exercise of exercises" [cardData]="exercise"></app-exercise-card>
 </div>

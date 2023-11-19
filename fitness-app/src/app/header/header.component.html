@@ -1,11 +1,26 @@
-<mat-toolbar color="primary">
-  <span>fitness-app</span>
-  <span class="spacer"></span>
-  <button mat-button [routerLink]="['/']">
-    Home
-  </button>
-  <button mat-button (click)="goBack()">
-    <mat-icon>arrow_back</mat-icon>
-    Voltar
-  </button>
-</mat-toolbar>
+<mat-drawer-container hasBackdrop="true">
+  <mat-drawer #drawer mode="over">
+    <button mat-button [routerLink]="['/register-training']" (click)="drawer.toggle()">Novo Treino</button>
+    <button mat-button [routerLink]="['/register-exercise']" (click)="drawer.toggle()">Nova série</button>
+    <button mat-button [routerLink]="['/manage']" (click)="drawer.toggle()">Gerenciar</button>
+  </mat-drawer>
+  <mat-toolbar color="primary" *ngIf="showHeader">    <button mat-button (click)="drawer.toggle()" class="menu-button" *ngIf="isScreenSmall">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <ng-container *ngIf="!isScreenSmall">
+      <button mat-button [routerLink]="['/register-training']">Cadastrar Treino</button>
+      <button mat-button [routerLink]="['/register-exercise']">Cadastrar série</button>
+      <button mat-button [routerLink]="['/manage']">Gerenciar</button>
+    </ng-container>
+    
+    <span class="toolbar-spacer"></span>
+    <button mat-button (click)="logOff()">Sair</button>
+    <button mat-button [routerLink]="['/home']">Home</button>
+    <button mat-button (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+      Voltar
+    </button>
+
+  </mat-toolbar>
+</mat-drawer-container>
+

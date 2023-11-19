@@ -1,0 +1,41 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+.register-card {
+  width: 300px;
+  text-align: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.training-table {
+  display: table;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.training-row {
+  display: table-row;
+}
+
+.training-cell {
+  display: table-cell;
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.header-row {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+mat-card-title, p {
+  color: white;
+}

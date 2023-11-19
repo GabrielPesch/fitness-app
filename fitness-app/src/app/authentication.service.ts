@@ -9,11 +9,7 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) {}
 
-  login(data: { email: string, password: string }): Observable<any> {
-    return this.http.post('http://localhost:8081/login', data);
-  }
-
-  saveTokenToLocalStorage(token: string): void {
-    localStorage.setItem('authToken', token);
+  login(email: string, password: string): Observable<any> {    
+    return this.http.get(`http://localhost:3000/users?email=${email}&password=${password}`);
   }
 }

@@ -1,34 +1,5 @@
-<h1 class="page-title">{{ pageTitle }}</h1>
-<h2 class="page-subtitle">{{ pageSubtitle }}</h2>
-<form (ngSubmit)="onSubmit()">
-  <div>
-    <label for="title">Título:</label>
-    <input type="text" id="title" [(ngModel)]="newTraining.title" name="title" required>
-    <div *ngIf="formErrors['title']">
-      {{ formErrors['title'] }}
-    </div>
-  </div>
-  
-  <div>
-    <label for="muscularGroup">Grupo Muscular:</label>
-    <select id="muscularGroup" [(ngModel)]="newTraining.muscularGroup" name="muscularGroup" required>
-      <option value="Braços">Braços</option>
-      <option value="Pernas">Pernas</option>
-      <option value="Tronco">Tronco</option>
-      <option value="Abdómen E Lombar">Abdómen E Lombar</option>
-    </select>
-  </div>
-  
-  <div>
-    <label for="image">Link da Imagem:</label>
-    <input type="text" id="image" [(ngModel)]="newTraining.image" name="image" required>
-    <div *ngIf="formErrors['image']">
-      {{ formErrors['image'] }}
-    </div>
-  </div>
-
-  <button type="submit">Salvar Treino</button>
-</form>
+<h1 class="page-title mat-display-1">{{ pageTitle }}</h1>
+<h2 class="page-subtitle mat-h2">{{ pageSubtitle }}</h2>
 <div class="cards-container">
   <app-training-card *ngFor="let card of cards" [cardData]="card"></app-training-card>
 </div>

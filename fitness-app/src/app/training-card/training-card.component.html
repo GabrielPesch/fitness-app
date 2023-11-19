@@ -1,13 +1,12 @@
 <mat-card class="card">
   <mat-card-header>
-    <div mat-card-avatar class="header-image"></div>
-    <mat-card-title>{{ cardData.title }}</mat-card-title>
+    <mat-card-title style=" color: blueviolet;">{{ cardData.title }}</mat-card-title>
   </mat-card-header>
-  <img class="img-box" [src]="cardData.image" alt="Photo of a training">
+  <img class="img-box" [src]="cardData.image_url" alt="{{ cardData.title }}">
   <mat-card-content>
-    <p>{{ cardData.muscularGroup }}</p>
+    <p class="mat-body-1">Concluído: {{ cardData.finished_times }} vezes</p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button [routerLink]="['/series', cardData.id]">Ver detalhes</button>
+    <button mat-button color="accent" [routerLink]="['/series', cardData.id]">Ver detalhes</button>
   </mat-card-actions>
 </mat-card>

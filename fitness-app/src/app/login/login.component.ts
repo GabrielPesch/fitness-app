@@ -1,7 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
+interface IUserResponse {
+  name: string,
+  email: string,
+  password: string, 
+  id: number
+}
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,29 +20,35 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthenticationService,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {}
 
   login() {
     this.authService
-      .login({ email: this.email, password: this.password })
-      .subscribe({
-        next: (response) => {
-          this.authService.saveTokenToLocalStorage(response.token)
+    .login(this.email, this.password)
+    .subscribe({
+      next: (user: IUserResponse[]) => {
+        if (user.length) {
+          const {password, ...restOfUser} = user[0]
+          localStorage.setItem('user', JSON.stringify(restOfUser))
           this.router.navigate(['home']);
-        },
-        error: (error) => {
-          console.error('Erro no login', error);
+        } else {
+          this.openSnackBar('Credenciais inválidas', 'Fechar');
         }
+      },
+      error: (error: unknown) => {
+        console.error(error)
+        this.openSnackBar('Erro no login', 'Fechar');
       }
-       
-
-      );
+    });
   }
 
-  goToRegister() {
-    this.router.navigate(['register']);
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 1000,
+    });
   }
 }

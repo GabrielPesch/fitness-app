@@ -1,0 +1,25 @@
+.manage-container {
+    padding: 20px;
+  }
+  
+  .manage-table {
+    display: table;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .manage-row {
+    display: table-row;
+  }
+  
+  .manage-cell {
+    display: table-cell;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .header-row {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  

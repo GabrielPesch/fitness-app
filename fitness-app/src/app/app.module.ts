@@ -17,6 +17,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { RegisterComponent } from './register/register.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ExerciseCardComponent } from './exercise-card/exercise-card.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { RegisterExerciseComponent } from './register-exercise/register-exercise.component';
+import { MatSelectModule } from '@angular/material/select';
+import { RegisterTrainingComponent } from './register-training/register-training.component';
+import { ManageTrainingExerciseComponent } from './manage-training-exercise/manage-training-exercise.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +36,10 @@ import { RegisterComponent } from './register/register.component';
     TrainingDetailsComponent,
     LoginComponent,
     RegisterComponent,
+    ExerciseCardComponent,
+    RegisterExerciseComponent,
+    RegisterTrainingComponent,
+    ManageTrainingExerciseComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +54,10 @@ import { RegisterComponent } from './register/register.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSnackBarModule,
+    MatSlideToggleModule,
+    MatSelectModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,81 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { TrainingCard } from '../training-details/training-card.model';
+import { Training } from '../training-details/training-card.model';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements OnInit {
   pageTitle: string = 'Minhas séries';
   pageSubtitle: string = 'O corpo conquista aquilo que a mente acredita';
-  cards: TrainingCard[] = [];
-  formErrors: { [key: string]: string } = {
-    'title': '',
-    'image': ''
-  };
+  cards: Training[] = [];
 
-  newTraining: TrainingCard = {
-    id: 0,
-    image: '',
-    title: '',
-    muscularGroup: 'Braços'
-  };
-
-  constructor() { }
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.loadTrainings();
   }
-  onSubmit(): void {
-
-    if (this.validateForm()) {
-      this.newTraining.id = this.generateUniqueId();
-  
-      if (!this.cards) {
-        this.cards = [];
-      }
-  
-      this.cards.push(this.newTraining);
-      localStorage.setItem('trainingCards', JSON.stringify(this.cards));
-      this.resetForm();
-    }
-  }
-
-  generateUniqueId(): number {
-    return Date.now();
-  }
 
   loadTrainings(): void {
-    const storedTrainings = localStorage.getItem('trainingCards');
-    this.cards = storedTrainings ? JSON.parse(storedTrainings) : [];
-  }
+    const userItem = localStorage.getItem('user');
 
-  validateForm(): boolean {
-    this.formErrors['title'] = this.newTraining.title ? '' : 'O título é obrigatório.';
-    this.formErrors['image'] = this.isValidUrl(this.newTraining.image)
-      ? (this.isJpgUrl(this.newTraining.image) ? '' : 'A imagem deve ser no formato .jpg.')
-      : 'O link da imagem é inválido ou está vazio.';
-
-    return !Object.values(this.formErrors).some(error => error);
-  }
-
-  isValidUrl(url: string): boolean {
-    const regex = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
-    return regex.test(url);
-  }
-
-  isJpgUrl(url: string): boolean {
-    const regex = /\.jpg$/i;
-    return regex.test(url);
-  }
-
-  resetForm(): void {
-    this.newTraining = {
-      id: 0,
-      image: '',
-      title: '',
-      muscularGroup: 'Braços'
-    };
+    if (userItem) {
+      const user = JSON.parse(userItem);
+      if (user && user.id) {
+        this.http
+          .get<Training[]>(
+            `http://localhost:3000/trainings?user_id=${user.id}`
+          )
+          .subscribe((trainings) => {
+            this.cards = trainings;
+          });
+      } else {
+        this.router.navigate(['login']);
+      }
+    }
   }
 }
