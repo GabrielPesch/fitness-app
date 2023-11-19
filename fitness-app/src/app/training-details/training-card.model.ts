@@ -1,7 +1,7 @@
-export interface TrainingCard {
-    id: number;
-    image: string;
+export interface Training {
+    id?: number;
+    image_url: string;
     title: string;
-    repetitions: string;
+    finished_times: 0,
   }
   

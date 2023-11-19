@@ -1,0 +1,277 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Gabriel Kucek Pesch",
+      "email": "gabriel.pesch@gmail.com",
+      "password": "senha123"
+    }
+  ],
+  "trainings": [
+    {
+      "id": 1,
+      "title": "Treino A - Push",
+      "finished_times": 5,
+      "image_url": "https://wallpaperaccess.com/full/1244717.jpg",
+      "user_id": 1
+    },
+    {
+      "id": 2,
+      "title": "Treino B - Pull",
+      "finished_times": 5,
+      "image_url": "https://wallpaperaccess.com/full/1244680.jpg",
+      "user_id": 1
+    },
+    {
+      "id": 3,
+      "title": "Treino C - Legs",
+      "finished_times": 4,
+      "image_url": "https://imgs.search.brave.com/pAU0KtGeEoN6GVBjlCqnY0UZkzuvGkyuapKS472jvlM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtcHJlbWl1/bS9ob21lbS1hbmRh/bmRvLXNvemluaG8t/Y29tLW1hcnRlbG8t/bm8tcXVhcnRvLWVz/Y3Vyb182MDA3NzYt/MTQzMTcuanBnP3Np/emU9NjI2JmV4dD1q/cGc",
+      "user_id": 1
+    }
+  ],
+  "exercises": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "training_id": 1,
+      "name": "Supino reto com halteres",
+      "muscular_group": "Peito",
+      "repetitions": "3x8-10",
+      "rest": 120,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://dicademusculacao.com.br/wp-content/uploads/2013/09/supino-reto-com-halter.jpg",
+      "load": 24
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "training_id": 1,
+      "name": "Supino inclinado com halteres",
+      "muscular_group": "Peito",
+      "repetitions": "3x8-10",
+      "rest": 120,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_311/https://dicademusculacao.com.br/wp-content/uploads/2013/09/Supino-inclinado-com-halter.jpg",
+      "load": 20
+    },
+    {
+      "id": 3,
+      "user_id": 1,
+      "training_id": 1,
+      "name": "Crucifixo na polia",
+      "muscular_group": "Peito",
+      "repetitions": "3x8-10",
+      "rest": 60,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://dicademusculacao.com.br/wp-content/uploads/2013/09/Crucifixo-com-aparelho-voador.jpg",
+      "load": 20
+    },
+    {
+      "id": 4,
+      "user_id": 1,
+      "training_id": 1,
+      "name": "Desenvolvimento com halteres",
+      "muscular_group": "Ombros",
+      "repetitions": "3x8-10",
+      "rest": 90,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_370/https://dicademusculacao.com.br/wp-content/uploads/2013/09/Desenvolvimento-com-halteres.jpg",
+      "load": 20
+    },
+    {
+      "id": 5,
+      "user_id": 1,
+      "training_id": 1,
+      "name": "Elevação lateral na polia",
+      "muscular_group": "Ombros",
+      "repetitions": "3x10",
+      "rest": 60,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://dicademusculacao.com.br/wp-content/uploads/2013/09/Levantamento-lateral-com-cabo1.jpg",
+      "load": 20
+    },
+    {
+      "id": 6,
+      "user_id": 1,
+      "training_id": 1,
+      "name": "Tríceps corda",
+      "muscular_group": "Tríceps",
+      "repetitions": "3x10",
+      "rest": 60,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_319/https://dicademusculacao.com.br/wp-content/uploads/2013/09/triceps-puxador.jpg",
+      "load": 20
+    },
+    {
+      "id": 7,
+      "user_id": 1,
+      "training_id": 1,
+      "name": "Rosca francesa",
+      "muscular_group": "Tríceps",
+      "repetitions": "3x10",
+      "rest": 60,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://dicademusculacao.com.br/wp-content/uploads/2013/09/triceps-frances.jpg",
+      "load": 20
+    },
+    {
+      "id": 8,
+      "user_id": 1,
+      "training_id": 2,
+      "name": "Barra fixa",
+      "muscular_group": "Costas",
+      "repetitions": "3x6-8",
+      "rest": 120,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_224/https://dicademusculacao.com.br/wp-content/uploads/2013/09/barra.jpg",
+      "load": 0
+    },
+    {
+      "id": 9,
+      "user_id": 1,
+      "training_id": 2,
+      "name": "Remada Curvada",
+      "muscular_group": "Costas",
+      "repetitions": "3x8-10",
+      "rest": 90,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_388/https://dicademusculacao.com.br/wp-content/uploads/2013/09/remada-curvada-com-barra.jpg",
+      "load": 25
+    },
+    {
+      "id": 10,
+      "user_id": 1,
+      "training_id": 2,
+      "name": "Remada Baixa Sentado",
+      "muscular_group": "Costas",
+      "repetitions": "3x10-12",
+      "rest": 60,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_341/https://dicademusculacao.com.br/wp-content/uploads/2013/09/remada-baixa-com-cabo-.jpg",
+      "load": 70
+    },
+    {
+      "id": 11,
+      "user_id": 1,
+      "training_id": 2,
+      "name": "Encolhimento com barra",
+      "muscular_group": "Costas",
+      "repetitions": "3x8-10",
+      "rest": 60,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_375/https://dicademusculacao.com.br/wp-content/uploads/2013/09/encolhimento.jpg",
+      "load": 20
+    },
+    {
+      "id": 12,
+      "user_id": 1,
+      "training_id": 2,
+      "name": "Crucifixo invertido no Aparelho",
+      "muscular_group": "Ombros",
+      "repetitions": "3x10",
+      "rest": 60,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_640/https://dicademusculacao.com.br/wp-content/uploads/2013/09/Crucifixo-invertido-no-aparelho.jpg",
+      "load": 20
+    },
+    {
+      "id": 13,
+      "user_id": 1,
+      "training_id": 2,
+      "name": "Rosca direta",
+      "muscular_group": "Bíceps",
+      "repetitions": "3x10",
+      "rest": 60,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_388/https://dicademusculacao.com.br/wp-content/uploads/2013/09/rosca-direta-com-barra.jpg",
+      "load": 18
+    },
+    {
+      "id": 14,
+      "user_id": 1,
+      "training_id": 2,
+      "name": "Rosca concentrada",
+      "muscular_group": "Tríceps",
+      "repetitions": "3x10",
+      "rest": 60,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_569/https://dicademusculacao.com.br/wp-content/uploads/2013/09/rosca-concentrada.jpg",
+      "load": 8
+    },
+    {
+      "id": 15,
+      "user_id": 1,
+      "training_id": 3,
+      "name": "Agachamento Livre",
+      "muscular_group": "Pernas",
+      "repetitions": "3x8-10",
+      "rest": 120,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_318/https://dicademusculacao.com.br/wp-content/uploads/2013/09/agachmanto-livre.jpg",
+      "load": 50
+    },
+    {
+      "id": 16,
+      "user_id": 1,
+      "training_id": 3,
+      "name": "Leg press",
+      "muscular_group": "Pernas",
+      "repetitions": "3x8-10",
+      "rest": 90,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_640/https://dicademusculacao.com.br/wp-content/uploads/2013/09/leg-press-45.jpg",
+      "load": 240
+    },
+    {
+      "id": 17,
+      "user_id": 1,
+      "training_id": 3,
+      "name": "Levantamento Terra",
+      "muscular_group": "Pernas",
+      "repetitions": "3x8-10",
+      "rest": 60,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_360/https://dicademusculacao.com.br/wp-content/uploads/2013/09/levantamento-terra-perna-esticada.jpg",
+      "load": 42
+    },
+    {
+      "id": 18,
+      "user_id": 1,
+      "training_id": 3,
+      "name": "Afundo",
+      "muscular_group": "Pernas",
+      "repetitions": "3x8",
+      "rest": 60,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_647/https://dicademusculacao.com.br/wp-content/uploads/2013/09/passada-afundo.jpg",
+      "load": 20
+    },
+    {
+      "id": 19,
+      "user_id": 1,
+      "training_id": 3,
+      "name": "Flexão de pernas deitado",
+      "muscular_group": "Pernas",
+      "repetitions": "3x10-12",
+      "rest": 60,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_629/https://dicademusculacao.com.br/wp-content/uploads/2013/09/flexao-de-perna-em-pe.jpg",
+      "load": 75
+    },
+    {
+      "id": 20,
+      "user_id": 1,
+      "training_id": 3,
+      "name": "Cadeira extensora",
+      "muscular_group": "Pernas",
+      "repetitions": "3x10",
+      "rest": 60,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_400/https://dicademusculacao.com.br/wp-content/uploads/2013/09/cadeira-flexora.jpg",
+      "load": 80
+    },
+    {
+      "id": 21,
+      "user_id": 1,
+      "training_id": 3,
+      "name": "Panturilhas em pé",
+      "muscular_group": "Pernas",
+      "repetitions": "3x12-15",
+      "rest": 60,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_297/https://dicademusculacao.com.br/wp-content/uploads/2013/09/panturrilha-em-pe.jpg",
+      "load": 50
+    },
+    {
+      "id": 22,
+      "user_id": 1,
+      "training_id": 3,
+      "name": "Panturilhas sentado",
+      "muscular_group": "Pernas",
+      "repetitions": "3x10",
+      "rest": 60,
+      "image_url": "https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_476/https://dicademusculacao.com.br/wp-content/uploads/2013/09/panturrilha-sentado.jpg",
+      "load": 80
+    }
+  ]
+}

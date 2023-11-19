@@ -1,6 +1,5 @@
-<h1>Minhas séries</h1>
-<h2>O corpo conquista aquilo que a mente acredita</h2>
-
-<div class="card-container">
+<h1 class="page-title mat-display-1">{{ pageTitle }}</h1>
+<h2 class="page-subtitle mat-h2">{{ pageSubtitle }}</h2>
+<div class="cards-container">
   <app-training-card *ngFor="let card of cards" [cardData]="card"></app-training-card>
 </div>
