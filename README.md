@@ -34,9 +34,3 @@ O tema do projeto da disciplina é criar uma aplicação web voltada para o gere
 - [ ] Utilizar a diretiva ngIf para controlar a exibição ou ocultação de elementos com base em condições específicas.
 - [ ] Formatar a apresentação de dados com Pipes, de acordo com os requisitos do aplicativo.
 - [ ] Executar o processo de build da aplicação e realizar o deploy para tornar o aplicativo acessível online.
-- [ ] **Cadastro e Login de Usuários**: Autenticação segura para acessar funcionalidades personalizadas.
-- [ ] **Planejamento de Exercícios**: Crie e personalize planos de exercícios.
-- [ ] **Registro de Progresso**: Mantenha um registro detalhado do seu progresso em diferentes exercícios.
-
-
-
