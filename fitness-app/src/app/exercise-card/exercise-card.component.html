@@ -1,7 +1,7 @@
 <mat-card class="card">
   <mat-slide-toggle (change)="toggleVisibility()">Concluído</mat-slide-toggle>
   <mat-card-header>
-    <mat-card-title style=" color: blueviolet;">{{ cardData.name }}</mat-card-title>
+    <mat-card-title style="color: blueviolet;" [title]="cardData.name">{{ cardData.name }}</mat-card-title>
   </mat-card-header>
   <img class="img-box" [src]="cardData.image_url" alt="{{ cardData.name }}">
   <mat-card-content>

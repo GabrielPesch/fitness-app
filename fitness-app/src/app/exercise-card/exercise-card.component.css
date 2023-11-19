@@ -32,3 +32,17 @@ p {
 span {
   color: purple
 }
+
+.img-box {
+  width: 250px;
+  height: 250px;
+}
+
+mat-card-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  width: 212px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
